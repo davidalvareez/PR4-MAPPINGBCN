@@ -1,0 +1,1050 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+*{
+    font-family: 'Oswald', sans-serif;
+}
+input[type='text'] { 
+    font-size: 18px; 
+}
+input[type='password'] { 
+    font-size: 18px; 
+}
+
+/*ESTILOS DEL MENU*/
+nav{
+    width:0;
+    height:0;
+}
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  
+  z-index: 3;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: #232323;
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: tomato;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: black;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top left of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 300px;
+  height: 3000px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  /* to stop flickering of text in safari */
+  
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+.leaflet-control-layers-expanded {
+    color: white;
+    font-size: 20px;
+    background-color: cadetblue;
+}
+textarea {
+    resize: none;
+}
+.boton_filtro {
+    width: 10%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: cadetblue;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 10000;
+    margin-top: 20%;
+    margin-right: 1%;
+    outline: none;
+    float:right;
+}
+
+.boton_filtro:hover {
+    background: cadetblue;
+    color: #fff !important;
+}
+.boton_enviar_mapa{
+    width: 80%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: cadetblue;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 10000;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 10%;
+    outline: none;
+    float:right;
+}
+.boton_enviar_mapa:hover {
+    background: cadetblue;
+    color: #fff !important;
+}
+
+.boton_añadir_favorito{
+    width: 80%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: yellow;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 10000;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 10%;
+    outline: none;
+    float:right;
+}
+.boton_añadir_favorito:hover {
+    background: yellow;
+    color: #fff !important;
+}
+.boton_crear_ruta{
+    width: 80%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: red;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 10000;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 10%;
+    outline: none;
+    float:right;
+}
+.boton_crear_ruta:hover {
+    background: red;
+    color: #fff !important;
+}
+
+.boton_quitar_favorito{
+    width: 80%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: yellow;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 10000;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 10%;
+    outline: none;
+    float:right;
+}
+.boton_quitar_favorito:hover {
+    background: yellow;
+    color: #fff !important;
+}
+.leaflet-popup-content{
+    height: 600px;
+}
+.img_popup{
+    width: 250px;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.boton_eliminar_mapa{
+    width: 80%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: red;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    z-index: 10000;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 10%;
+    outline: none;
+    float:right;
+}
+.boton_eliminar_mapa:hover {
+    background: red;
+    color: #fff !important;
+}
+
+.contenido_pistas{
+    margin-bottom: 2%;
+    background: white;
+    border: 5px solid black;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    padding-top:8%;
+    padding-bottom: 2%;
+
+}
+.boton_solucion {
+    width: 40%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: cadetblue;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_solucion:hover {
+    background: cadetblue;
+    color: #fff !important;
+}
+.boton_punto_control {
+    width: 40%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: red;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_punto_control:hover {
+    background: red;
+    color: #fff !important;
+}
+/*ESTILOS DEL MAPA*/
+.body_mapa{
+    overflow: hidden;
+    margin: 0;
+}
+.mapa{
+    width: 100%;
+    height: 3000px;
+    z-index: 2;
+}
+/*Estilos del login*/
+.login {
+    overflow: hidden;
+    background-size: cover;
+}
+
+.all-view{
+    height: 100vh;
+}
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.flex-cv {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-content: center;
+    align-items: center;
+}
+
+/*ESTILOS DEL LOGIN*/
+.cuadro_login {
+    width: 50%;
+    padding-bottom:1%;
+    background: white;
+    border: 5px solid black;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.h1_login {
+    padding-top: 3%;
+    font-size: 35px;
+}
+.msgregistrarse{
+    font-size:20px;
+}
+.input_login {
+    width: 60%;
+    height: 45px;
+    margin-bottom: 1rem;
+    border-radius: 7px;
+    border-color: black;
+    background-color: white;
+    outline: none;
+}
+.boton_login {
+    width: 60%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: cadetblue;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_login:hover {
+    background: cadetblue;
+    color: #fff !important;
+}
+
+.boton_registro {
+    width: 40%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: red;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_registro:hover {
+    background: red;
+    color: #fff !important;
+}
+
+/* FIN ESTILOS DEL LOGIN*/
+/*ESTILOS DEL REGISTRO DE USUARIOS*/
+.cuadro_registro {
+    width: 50%;
+    padding-bottom:1%;
+    background: white;
+    border: 5px solid black;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.input_registro {
+    width: 50%;
+    height: 40px;
+    margin-bottom: 1rem;
+    border-radius: 7px;
+    border-color: black;
+    background-color: white;
+    outline: none;
+}
+.boton_login_registro {
+    width: 40%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: cadetblue;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    outline: none;
+}
+
+.boton_login_registro:hover {
+    background: cadetblue;
+    color: #fff !important;
+}
+
+.boton_registro_registro {
+    width: 50%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: red;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_registro_registro:hover {
+    background: red;
+    color: #fff !important;
+}
+/*FIN ESTILOS DEL REGISTRO DE USUARIOS*/
+/*ESTILOS INDEX GIMCANA*/
+.cuadro_index_gimcana {
+    width: 50%;
+    padding-bottom:2%;
+    background: white;
+    border: 5px solid black;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+.boton_jugar_solo {
+    width: 40%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: cadetblue;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_jugar_solo:hover {
+    background: cadetblue;
+    color: #fff !important;
+}  
+.boton_jugar_equipo {
+    width: 40%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: palegreen;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_jugar_equipo:hover {
+    background: palegreen;
+    color: #fff !important;
+} 
+/*FIN ESTILOS INDEX GIMCANA*/
+/*ESTILOS CREAR EQUIPO GIMCANA*/
+.cuadro_crear_equipo {
+    width: 50%;
+    padding-bottom:1%;
+    background: white;
+    border: 5px solid black;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.input_crear_equipo {
+    width: 60%;
+    height: 40px;
+    margin-bottom: 1rem;
+    border-radius: 7px;
+    border-color: black;
+    background-color: white;
+    outline: none;
+}
+.boton_crear_equipo {
+    width: 60%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: cadetblue;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_crear_equipo:hover {
+    background: cadetblue;
+    color: #fff !important;
+}
+
+.boton_volver_equipo {
+    width: 40%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: red;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    outline: none;
+}
+
+.boton_volver_equipo:hover {
+    background: red;
+    color: #fff !important;
+}
+/*FIN ESTILOS CREAR EQUIPO GIMCANA*/
+/*ESTILOS UNIRSE A UN EQUIPO GIMCANA*/
+.cuadro_unir_equipo {
+    width: 40%;
+    padding-bottom:1%;
+    background: white;
+    border: 5px solid black;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.input_unir_equipo {
+    width: 60%;
+    height: 40px;
+    margin-bottom: 1rem;
+    border-radius: 7px;
+    border-color: black;
+    background-color: white;
+    outline: none;
+}
+.boton_unir_equipo {
+    width: 60%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: cadetblue;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_unir_equipo:hover {
+    background: cadetblue;
+    color: #fff !important;
+}
+
+.boton_control_panel {
+    width: 40%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: cadetblue;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    position: relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    outline: none;
+}
+
+.boton_control_panel:hover {
+    background: cadetblue;
+    color: #fff !important;
+} 
+/*FIN ESTILOS UNIRSE A UN EQUIPO GIMCANA*/
+/*ESTILOS PANEL ADMINISTRADOR*/
+.cuadro_admin{
+    width: 50%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    padding-bottom:2%;
+    background: white;
+    border: 5px solid black;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+.boton_atras_admin{
+    width: 12%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: cadetblue;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+    margin-left:75%;
+    margin-top: 1%;
+}
+.boton_atras_admin:hover {
+    background: cadetblue;
+    color: #fff !important;
+}
+.boton_logout_admin{
+    width: 12%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: red;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+}
+.boton_logout_admin:hover {
+    background: red;
+    color: #fff !important;
+}
+.boton_modificar{
+    width: 100%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: cadetblue;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+}
+.boton_modificar:hover {
+    background: cadetblue;
+    color: #fff !important;
+}
+.boton_eliminar{
+    width: 100%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: red;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+}
+.boton_eliminar:hover {
+    background: red;
+    color: #fff !important;
+}
+.menuder{
+    width: 100%;
+    float: right;
+    margin-bottom: 2%;
+}
+.input_filtro{
+    width: 21%;
+    height: 40px;
+    margin-bottom: 1rem;
+    border-radius: 7px;
+    border-color: black;
+    background-color: white;
+    outline: none;
+}
+.contenido_admin{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+.boton_crear_user{
+    width: 50%;
+    height: 45px;
+    border-radius: 7px;
+    border-color: cadetblue;
+    background-color: white;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.5s ease;
+}
+.boton_crear_user:hover{
+    background: cadetblue;
+    color: #fff !important;
+}
+/*FIN ESTILOS PANEL ADMINISTRADOR*/
+@media (max-width: 480px) {
+
+    /*ESTILOS DE LOGIN*/
+    .cuadro_login {
+        width: 100%;
+        background: white;
+        border: 5px solid black;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+    }
+    .input_login {
+        width: 80%;
+        height: 45px;
+        margin-bottom: 1rem;
+        border-radius: 7px;
+        border-color: black;
+        background-color: white;
+        outline: none;
+    }
+    .boton_login {
+        width: 83%;
+        height: 45px;
+        border-radius: 7px;
+        border-color: cadetblue;
+        background-color: white;
+        font-size: 18px;
+        font-weight: 500;
+        transition: all 0.5s ease;
+        position: relative;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        outline: none;
+    }
+    /*FIN DE ESTILOS DEL LOGIN*/
+    /*ESTILOS DEL REGISTRO DE USUARIOS*/
+    .cuadro_registro {
+        width: 100%;
+        padding-bottom:2%;
+        background: white;
+        border: 5px solid black;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+    }
+    .input_registro {
+        width: 90%;
+        height: 40px;
+        margin-bottom: 1rem;
+        border-radius: 7px;
+        border-color: black;
+        background-color: white;
+        outline: none;
+    }
+    .boton_login_registro {
+        width: 90%;
+        height: 45px;
+        border-radius: 7px;
+        border-color: cadetblue;
+        background-color: white;
+        font-size: 18px;
+        font-weight: 500;
+        transition: all 0.5s ease;
+        position: relative;
+        margin-bottom: 10px;
+        margin-top: 30px;
+        outline: none;
+    }
+    .boton_registro_registro {
+        width: 90%;
+        height: 45px;
+        border-radius: 7px;
+        border-color: red;
+        background-color: white;
+        font-size: 18px;
+        font-weight: 500;
+        transition: all 0.5s ease;
+        position: relative;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        outline: none;
+    }
+    /*FIN ESTILOS DEL REGISTRO DE USUARIOS*/
+    /*ESTILOS INDEX GIMCANA*/
+    .cuadro_index_gimcana {
+        width: 100%;
+        padding-bottom:2%;
+        background: white;
+        border: 5px solid black;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+    }
+    
+    .boton_jugar_solo {
+        width: 90%;
+        height: 45px;
+        border-radius: 7px;
+        border-color: cadetblue;
+        background-color: white;
+        font-size: 18px;
+        font-weight: 500;
+        transition: all 0.5s ease;
+        position: relative;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        outline: none;
+    }
+    .boton_jugar_equipo {
+        width: 90%;
+        height: 45px;
+        border-radius: 7px;
+        border-color: palegreen;
+        background-color: white;
+        font-size: 18px;
+        font-weight: 500;
+        transition: all 0.5s ease;
+        position: relative;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        outline: none;
+    }
+    /*FIN ESTILOS INDEX GIMCANA*/
+    /*ESTILOS CREAR EQUIPO GIMCANA*/
+    .cuadro_crear_equipo {
+        width: 100%;
+        padding-bottom:1%;
+        background: white;
+        border: 5px solid black;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+    }
+    .input_crear_equipo {
+        width: 90%;
+        height: 40px;
+        margin-bottom: 1rem;
+        border-radius: 7px;
+        border-color: black;
+        background-color: white;
+        outline: none;
+    }
+    .boton_crear_equipo {
+        width: 90%;
+        height: 45px;
+        border-radius: 7px;
+        border-color: cadetblue;
+        background-color: white;
+        font-size: 18px;
+        font-weight: 500;
+        transition: all 0.5s ease;
+        position: relative;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        outline: none;
+    }
+    .boton_volver_equipo {
+        width: 90%;
+        height: 45px;
+        border-radius: 7px;
+        border-color: red;
+        background-color: white;
+        font-size: 18px;
+        font-weight: 500;
+        transition: all 0.5s ease;
+        position: relative;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        outline: none;
+    }
+    /*FIN ESTILOS CREAR EQUIPO GIMCANA*/   
+    /*ESTILOS UNIRSE EQUIPO GIMCANA*/
+    .cuadro_unir_equipo {
+        width: 100%;
+        padding-bottom:1%;
+        background: white;
+        border: 5px solid black;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+    }
+    .input_unir_equipo {
+        width: 90%;
+        height: 40px;
+        margin-bottom: 1rem;
+        border-radius: 7px;
+        border-color: black;
+        background-color: white;
+        outline: none;
+    }
+    .boton_unir_equipo {
+        width: 90%;
+        height: 45px;
+        border-radius: 7px;
+        border-color: cadetblue;
+        background-color: white;
+        font-size: 18px;
+        font-weight: 500;
+        transition: all 0.5s ease;
+        position: relative;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        outline: none;
+    }
+    /*FIN ESTILOS UNIRSE EQUIPO GIMCANA*/
+    /*ESTILOS MAPA*/
+    .boton_filtro {
+        width: 30%;
+        height: 45px;
+        border-radius: 7px;
+        border-color: cadetblue;
+        background-color: white;
+        font-size: 18px;
+        font-weight: 500;
+        transition: all 0.5s ease;
+        position: relative;
+        z-index: 10000;
+        margin-top: 1%;
+        margin-right: 3%;
+        outline: none;
+        float:right;
+    }
+    .leaflet-top .leaflet-control{
+        margin-top: 60px;
+    }
+    /*FIN ESTILOS MAPA*/
+    /*ESTILOS GIMCANA*/
+    .boton_solucion {
+        width: 90%;
+        height: 50px;
+        border-radius: 7px;
+        border-color: cadetblue;
+        background-color: white;
+        font-size: 18px;
+        font-weight: 500;
+        transition: all 0.5s ease;
+        position: relative;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        outline: none;
+    }
+    .boton_punto_control {
+        width: 90%;
+        height: 50px;
+        border-radius: 7px;
+        border-color: red;
+        background-color: white;
+        font-size: 18px;
+        font-weight: 500;
+        transition: all 0.5s ease;
+        position: relative;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        outline: none;
+    }
+    .contenido_pistas{
+        margin-bottom: 2%;
+        background: white;
+        border: 5px solid black;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        padding-top:16%;
+        padding-bottom: 2%;
+    
+    }
+    /*FIN ESTILOS GIMCANA*/
+}
