@@ -57,11 +57,10 @@ prueba3@prueba3.com   |     1234
 
 ## Agradecimientos 🍺
 
-    Gracias a los profesores por ayudarnos a desarrollar la tarea cuando estábamos colapsados.
+    Gracias a los compañeros Gerard, David Ortega y David Alvarez.
 
 ## Contacto 📧     
   ```  
-                                                                                            Gerard Gómez Monterroso   -   100007217.joan23@fje.edu
-    Si te ha quedado alguna duda sobre el proyecto no dudes en contactarnos por correo ->   David Ortega Colomo   -   100006394.joan23@fje.edu
-                                                                                            David Álvarez Rodríguez   -   6694.joan23@fje.edu
+                                                                                            
+    Si te ha quedado alguna duda sobre el proyecto no dudes en contactar por correo -> David Álvarez Rodríguez   -   davidalro2001@gmail.com
   ```  
