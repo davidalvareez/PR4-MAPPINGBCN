@@ -1,6 +1,6 @@
 # PROYECTO 4 - MAPAS
 
-**Este proyecto trata sobre hacer una gimcana donde los usuarios puedan ir a ubicaciones de Barcelona y pasar por puntos de control. Además tienes distintos CRUD**
+**Este proyecto trata sobre un mapa con las ubicaciones mas concurrentes de Barcelona y hacer una gimcana donde los usuarios puedan ir a las ubcaciones secretas y pasar por puntos de control. Además tienes distintos CRUD**
 
 
 ## Pre-requisitos 📋
